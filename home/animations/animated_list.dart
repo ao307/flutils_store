@@ -17,9 +17,8 @@ class _AnimatedListPageState extends State<AnimatedListPage> {
     _listKey.currentState?.insertItem(_list.length - 1);
   }
 
-  void _removeItem() {
+  void _removeItem(int index) {
     // remove item from the end of the list
-    final index = _list.length - 1;
     final item = _list[index];
     _listKey.currentState?.removeItem(
       index,
@@ -30,7 +29,7 @@ class _AnimatedListPageState extends State<AnimatedListPage> {
         ),
         trailing: const Icon(Icons.delete),
         onTap: () {
-          _removeItem();
+          _removeItem(index);
         },
       ),
       duration: const Duration(milliseconds: 250),
@@ -56,10 +55,13 @@ class _AnimatedListPageState extends State<AnimatedListPage> {
                 '$item $index',
                 style: const TextStyle(fontSize: 20),
               ),
-              trailing: const Icon(Icons.delete),
-              onTap: () {
-                _removeItem();
-              },
+              trailing: IconButton(
+                onPressed: () {
+                  _removeItem(index);
+                },
+                icon: const Icon(Icons.delete),
+              ),
+              onTap: () {},
             ),
           );
         },
