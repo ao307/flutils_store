@@ -1,6 +1,7 @@
 import 'package:flutils/config/themes/colors.dart';
 import 'package:flutils/core/extensions/size_extensions.dart';
 import 'package:flutils/core/utils/app_sizes.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AllStatefulWidgetsPage extends StatefulWidget {
@@ -28,6 +29,8 @@ class _AllStatefulWidgetsPageState extends State<AllStatefulWidgetsPage> {
   RangeValues _rangeSliderValues = const RangeValues(0, 50);
 
   int _currentStep = 0;
+
+  int _currentSelection = 0;
 
   final InputBorder _inputBorder = OutlineInputBorder(
     borderSide: const BorderSide(
@@ -109,6 +112,20 @@ class _AllStatefulWidgetsPageState extends State<AllStatefulWidgetsPage> {
           onChanged: (bool value) {
             setState(() {
               _switchValue = value;
+            });
+          },
+        ),
+        const Text('CupertinoSlidingSegmentedControl:'),
+        CupertinoSlidingSegmentedControl(
+          groupValue: _currentSelection,
+          children: const <int, Widget>{
+            0: Text('First'),
+            1: Text('Second'),
+            2: Text('Third'),
+          },
+          onValueChanged: (int? newValue) {
+            setState(() {
+              _currentSelection = newValue ?? 0;
             });
           },
         ),
