@@ -20,16 +20,18 @@ class _ResendButtonWithTimerState extends State<ResendButtonWithTimer> {
       isCountDown = true;
     });
     Future.delayed(const Duration(seconds: 1), () {
-      setState(() {
-        currentSecond = '${int.parse(currentSecond) - 1}';
-      });
-      if (int.parse(currentSecond) > 0) {
-        initTimer();
-      } else {
+      if (!isClosed) {
         setState(() {
-          isCountDown = false;
-          currentSecond = '60';
+          currentSecond = '${int.parse(currentSecond) - 1}';
         });
+        if (int.parse(currentSecond) > 0) {
+          initTimer();
+        } else {
+          setState(() {
+            isCountDown = false;
+            currentSecond = '60';
+          });
+        }
       }
     });
   }
@@ -38,6 +40,14 @@ class _ResendButtonWithTimerState extends State<ResendButtonWithTimer> {
   void initState() {
     initTimer();
     super.initState();
+  }
+
+  bool isClosed = false;
+
+  @override
+  void dispose() {
+    isClosed = true;
+    super.dispose();
   }
 
   @override
@@ -68,7 +78,7 @@ class RichTextButton extends StatelessWidget {
   final AlignmentGeometry? alignment;
 
   const RichTextButton({
-    Key? key,
+    super.key,
     this.text1,
     this.color1,
     this.text2,
@@ -77,7 +87,7 @@ class RichTextButton extends StatelessWidget {
     this.onPressed2,
     this.isBorder = false,
     this.alignment = Alignment.center,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
