@@ -3,7 +3,7 @@ import 'package:flutils/core/utils/app_sizes.dart';
 import 'package:flutter/material.dart';
 
 class DropdownPage extends StatefulWidget {
-  const DropdownPage({Key? key}) : super(key: key);
+  const DropdownPage({super.key});
 
   @override
   State<DropdownPage> createState() => _DropdownPageState();

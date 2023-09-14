@@ -2,7 +2,7 @@ import 'package:flutils/core/utils/app_sizes.dart';
 import 'package:flutter/material.dart';
 
 class GradientExamplesPage extends StatelessWidget {
-  const GradientExamplesPage({Key? key}) : super(key: key);
+  const GradientExamplesPage({super.key});
 
   @override
   Widget build(BuildContext context) {

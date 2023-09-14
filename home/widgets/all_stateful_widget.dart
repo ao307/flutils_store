@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AllStatefulWidgetsPage extends StatefulWidget {
-  const AllStatefulWidgetsPage({Key? key}) : super(key: key);
+  const AllStatefulWidgetsPage({super.key});
 
   @override
   State<AllStatefulWidgetsPage> createState() => _AllStatefulWidgetsPageState();
@@ -145,6 +145,9 @@ class _AllStatefulWidgetsPageState extends State<AllStatefulWidgetsPage> {
           child: Column(
             children: [
               TextFormField(
+                onTapOutside: (pointer) {
+                  FocusScope.of(context).unfocus();
+                },
                 decoration: InputDecoration(
                   hintText: 'Enter your name',
                   labelText: 'Name',
@@ -161,6 +164,9 @@ class _AllStatefulWidgetsPageState extends State<AllStatefulWidgetsPage> {
               ),
               const SizedBox(height: 16),
               TextFormField(
+                onTapOutside: (pointer) {
+                  FocusScope.of(context).unfocus();
+                },
                 decoration: InputDecoration(
                   hintText: 'Enter your email',
                   labelText: 'Email',

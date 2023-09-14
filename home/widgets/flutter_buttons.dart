@@ -5,7 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class FlutterButtons extends StatelessWidget {
-  const FlutterButtons({Key? key}) : super(key: key);
+  const FlutterButtons({super.key});
 
   @override
   Widget build(BuildContext context) {
