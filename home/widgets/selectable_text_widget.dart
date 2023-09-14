@@ -8,7 +8,12 @@ class SelectableTextWidget extends StatelessWidget {
     return const Scaffold(
       body: Center(
         child: SelectableText(
-          'Press and hold to select text and then tap on copy\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla euismod, nisl eget ultricies aliquam, nunc sapien ultricies nunc, quis ultricies nisl nisl nec nunc. Donec euismod, nisl eget ultricies aliquam, nunc sapien ultricies nunc, quis ultricies nisl nisl nec nunc. Donec euismod, nisl eget ultricies aliquam, nunc sapien ultricies nunc, quis ultricies nisl nisl nec nunc. Donec euismod, nisl eget ultricies aliquam, nunc sapien ultricies nunc, quis ultricies nisl nisl nec nunc. Donec euismod, nisl eget ultricies aliquam, nunc sapien ultricies nunc, quis ultricies nisl nisl nec nunc. Donec euismod, nisl eget ultricies aliquam, nunc sapien ultricies nunc, quis ultricies nisl nisl nec nunc. Donec euismod, nisl eget ultricies aliquam, nunc sapien ultricies nunc, quis ultricies nisl nisl nec nunc. Donec euismod, nisl eget ultricies aliquam, nunc sapien ultricies nunc, quis ultricies nisl nisl nec nunc.',
+          'Press and hold to select text and then tap on copy button to copy it.',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontSize: 16,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );
