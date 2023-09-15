@@ -29,7 +29,12 @@ class _AnimatedDefaultTextStylePageState
             fontSize: _fontSize,
             fontWeight: FontWeight.bold,
           ),
-          child: const Text('Click Me!'),
+          child: Text(
+            'Click Me!',
+            style: TextStyle(
+              color: Theme.of(context).textTheme.bodyLarge!.color,
+            ),
+          ),
         ),
       ),
     );

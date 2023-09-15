@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HeroAnimationPage extends StatelessWidget {
-  const HeroAnimationPage({Key? key}) : super(key: key);
+  const HeroAnimationPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +18,7 @@ class HeroAnimationPage extends StatelessWidget {
           },
           leading: const Hero(
             tag: 'hero-tag',
+            key: ValueKey('hero-tag'),
             child: CircleAvatar(
               radius: 24,
               backgroundImage: AssetImage(
@@ -45,6 +46,7 @@ class DetailPage extends StatelessWidget {
       body: const Center(
         child: Hero(
           tag: 'hero-tag',
+          key: ValueKey('hero-tag'),
           child: Image(
             image: AssetImage(
               'assets/images/launcher_icon.png',

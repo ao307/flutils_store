@@ -1,9 +1,10 @@
+import 'package:flutils/core/utils/app_const.dart';
 import 'package:flutter/material.dart';
 
 // you can customize this widget as you want
 // this is just a simple example
 class CollapsableDrawer extends StatelessWidget {
-  const CollapsableDrawer({Key? key}) : super(key: key);
+  const CollapsableDrawer({super.key});
 
   static final GlobalKey<ScaffoldState> _scaffoldKey =
       GlobalKey<ScaffoldState>();
@@ -34,7 +35,7 @@ class CollapsableDrawer extends StatelessWidget {
 }
 
 class CustomDrawer extends StatefulWidget {
-  const CustomDrawer({Key? key}) : super(key: key);
+  const CustomDrawer({super.key});
 
   @override
   State<CustomDrawer> createState() => _CustomDrawerState();
@@ -174,9 +175,9 @@ class CustomDrawerHeader extends StatelessWidget {
   final bool isCollapsable;
 
   const CustomDrawerHeader({
-    Key? key,
+    super.key,
     required this.isCollapsable,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -215,13 +216,13 @@ class CustomListTile extends StatelessWidget {
   final int infoCount;
 
   const CustomListTile({
-    Key? key,
+    super.key,
     required this.isCollapsed,
     required this.icon,
     required this.title,
     this.forwardIos = false,
     required this.infoCount,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -286,9 +287,9 @@ class OwnerInfo extends StatelessWidget {
   final bool isCollapsed;
 
   const OwnerInfo({
-    Key? key,
+    super.key,
     required this.isCollapsed,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -322,7 +323,7 @@ class OwnerInfo extends StatelessWidget {
                         FittedBox(
                           fit: BoxFit.scaleDown,
                           child: Text(
-                            'FlUtils',
+                            AppConst.appName,
                             overflow: TextOverflow.clip,
                             maxLines: 1,
                             style: TextStyle(

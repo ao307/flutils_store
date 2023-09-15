@@ -8,7 +8,7 @@ class AnimatedBuilderPage extends StatefulWidget {
 }
 
 class _AnimatedBuilderPageState extends State<AnimatedBuilderPage>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
 

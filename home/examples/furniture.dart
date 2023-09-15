@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 /// for load image fast you should replace network image with asset image
 /// and replace image url with image path
 class FurnitureExample extends StatefulWidget {
-  const FurnitureExample({Key? key}) : super(key: key);
+  const FurnitureExample({super.key});
 
   @override
   State<FurnitureExample> createState() => _FurnitureExampleState();
@@ -62,6 +62,12 @@ class _FurnitureExampleState extends State<FurnitureExample>
   }
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
@@ -106,7 +112,7 @@ class _FurnitureExampleState extends State<FurnitureExample>
                           Colors.black.withOpacity(0.9),
                           Colors.black.withOpacity(0.8),
                           Colors.black.withOpacity(0.2),
-                          Colors.black.withOpacity(0.1)
+                          Colors.black.withOpacity(0.1),
                         ],
                       ),
                     ),
@@ -234,17 +240,17 @@ class MyFadeAnimation extends StatefulWidget {
   final Widget child;
 
   const MyFadeAnimation({
-    Key? key,
+    super.key,
     required this.delay,
     required this.child,
-  }) : super(key: key);
+  });
 
   @override
   State<MyFadeAnimation> createState() => _MyFadeAnimationState();
 }
 
 class _MyFadeAnimationState extends State<MyFadeAnimation>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _opacityAnimation;
   late Animation<Offset> _translateYAnimation;
@@ -281,6 +287,12 @@ class _MyFadeAnimationState extends State<MyFadeAnimation>
     Future.delayed(Duration(milliseconds: (500 * widget.delay).round()), () {
       _animationController.forward();
     });
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
   }
 
   @override

@@ -1,4 +1,5 @@
 import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 // you can download the hole image from here: https://imgur.com/Lxb5owO.png
@@ -6,7 +7,7 @@ import 'package:flutter/material.dart';
 const holeImagePath = 'assets/images/png/hole.png';
 
 class HiddenCardAnimation extends StatefulWidget {
-  const HiddenCardAnimation({Key? key}) : super(key: key);
+  const HiddenCardAnimation({super.key});
 
   @override
   State<HiddenCardAnimation> createState() => HiddenCardAnimationState();
@@ -114,6 +115,7 @@ class HiddenCardAnimationState extends State<HiddenCardAnimation>
         mainAxisSize: MainAxisSize.min,
         children: [
           FloatingActionButton(
+            heroTag: 'hidden_card_animation1',
             onPressed: () async {
               holeAnimationController.forward();
               await cardOffsetAnimationController.forward();
@@ -129,6 +131,7 @@ class HiddenCardAnimationState extends State<HiddenCardAnimation>
           ),
           const SizedBox(width: 20),
           FloatingActionButton(
+            heroTag: 'hidden_card_animation2',
             onPressed: () {
               cardOffsetAnimationController.reverse();
               holeAnimationController.reverse();
@@ -172,10 +175,10 @@ class BlackHoleClipper extends CustomClipper<Path> {
 
 class HelloWorldCard extends StatelessWidget {
   const HelloWorldCard({
-    Key? key,
+    super.key,
     required this.size,
     required this.elevation,
-  }) : super(key: key);
+  });
 
   final double size;
   final double elevation;

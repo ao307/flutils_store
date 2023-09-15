@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SliverAppbarExample extends StatelessWidget {
-  const SliverAppbarExample({Key? key}) : super(key: key);
+  const SliverAppbarExample({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +18,7 @@ class SliverAppbarExample extends StatelessWidget {
               IconButton(
                 onPressed: () {},
                 icon: const Icon(Icons.search),
-              )
+              ),
             ],
             centerTitle: true,
             pinned: true,
