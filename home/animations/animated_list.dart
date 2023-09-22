@@ -9,11 +9,13 @@ class AnimatedListPage extends StatefulWidget {
 
 class _AnimatedListPageState extends State<AnimatedListPage> {
   final GlobalKey<AnimatedListState> _listKey = GlobalKey<AnimatedListState>();
-  final List<String> _list = ['Item', 'Item', 'Item'];
+  int length = 5;
+  final List<String> _list = List<String>.generate(5, (index) => 'Item $index');
 
   void _addItem() {
     // insert item at the end of the list
-    _list.add('Item');
+    length++;
+    _list.add('Item ${length - 1}');
     _listKey.currentState?.insertItem(_list.length - 1);
   }
 
@@ -52,7 +54,7 @@ class _AnimatedListPageState extends State<AnimatedListPage> {
             ).animate(animation),
             child: ListTile(
               title: Text(
-                '$item $index',
+                item,
                 style: const TextStyle(fontSize: 20),
               ),
               trailing: IconButton(

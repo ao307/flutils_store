@@ -135,7 +135,7 @@ class _StripePaymentBottomSheetPageState
                 context.navigateToPage(
                   const WebViewWidget(
                     title: 'Stripe Test Credentials',
-                    url: 'https://stripe.com/docs/testing#cards',
+                    initialUrl: 'https://stripe.com/docs/testing#cards',
                     copyLink: true,
                   ),
                 );

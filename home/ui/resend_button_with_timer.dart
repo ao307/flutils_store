@@ -20,18 +20,17 @@ class _ResendButtonWithTimerState extends State<ResendButtonWithTimer> {
       isCountDown = true;
     });
     Future.delayed(const Duration(seconds: 1), () {
-      if (!isClosed) {
+      if (!mounted) return;
+      setState(() {
+        currentSecond = '${int.parse(currentSecond) - 1}';
+      });
+      if (int.parse(currentSecond) > 0) {
+        initTimer();
+      } else {
         setState(() {
-          currentSecond = '${int.parse(currentSecond) - 1}';
+          isCountDown = false;
+          currentSecond = '60';
         });
-        if (int.parse(currentSecond) > 0) {
-          initTimer();
-        } else {
-          setState(() {
-            isCountDown = false;
-            currentSecond = '60';
-          });
-        }
       }
     });
   }
@@ -42,11 +41,8 @@ class _ResendButtonWithTimerState extends State<ResendButtonWithTimer> {
     super.initState();
   }
 
-  bool isClosed = false;
-
   @override
   void dispose() {
-    isClosed = true;
     super.dispose();
   }
 
