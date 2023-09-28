@@ -1,4 +1,4 @@
-import 'package:flutils/core/utils/app_sizes.dart';
+import 'package:flutils/core/res/app_sizes.dart';
 import 'package:flutter/material.dart';
 
 class GradientExamplesPage extends StatelessWidget {

@@ -5,15 +5,13 @@ class SelectableTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: SelectableText(
-          'Press and hold to select text and then tap on copy button to copy it.',
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),
+    return const Center(
+      child: SelectableText(
+        'Press and hold to select text and then tap on copy button to copy it.',
+        textAlign: TextAlign.center,
+        style: TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
         ),
       ),
     );

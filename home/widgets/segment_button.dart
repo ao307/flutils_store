@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 class CupertinoSlidingSegmentedControlWidgets extends StatefulWidget {
   const CupertinoSlidingSegmentedControlWidgets({super.key});
@@ -15,21 +14,19 @@ class _CupertinoSlidingSegmentedControlWidgetsState
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: CupertinoSlidingSegmentedControl(
-          groupValue: _currentSelection,
-          children: const <int, Widget>{
-            0: Text('First'),
-            1: Text('Second'),
-            2: Text('Third'),
-          },
-          onValueChanged: (int? newValue) {
-            setState(() {
-              _currentSelection = newValue ?? 0;
-            });
-          },
-        ),
+    return Center(
+      child: CupertinoSlidingSegmentedControl(
+        groupValue: _currentSelection,
+        children: const <int, Widget>{
+          0: Text('First'),
+          1: Text('Second'),
+          2: Text('Third'),
+        },
+        onValueChanged: (int? newValue) {
+          setState(() {
+            _currentSelection = newValue ?? 0;
+          });
+        },
       ),
     );
   }

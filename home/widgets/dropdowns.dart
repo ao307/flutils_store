@@ -1,5 +1,5 @@
 import 'package:flutils/core/extensions/size_extensions.dart';
-import 'package:flutils/core/utils/app_sizes.dart';
+import 'package:flutils/core/res/app_sizes.dart';
 import 'package:flutter/material.dart';
 
 class DropdownPage extends StatefulWidget {
