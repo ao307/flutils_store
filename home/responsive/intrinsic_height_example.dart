@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
 
-///
-/// I put a known height for the bigger container to show the difference
-/// but you can use it in unknown height container and it will work fine
-///
 const largeTestText =
     'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
     'Sed nonne merninisti licere mihi ista probare, quae sunt a te dicta? '
