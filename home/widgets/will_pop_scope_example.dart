@@ -9,11 +9,16 @@ class WillPopScopeExample extends StatelessWidget {
     return WillPopScope(
       onWillPop: () async {
         MostUsedFunctions.showSnackBarFun(context, 'On Will Pop Scope Works!');
-        return false;
+        // if you want to prevent the user from going back to the previous page make it return false;
+        return true;
       },
-      child: const Center(
-        child: Text(
-          'WillPopScope is a widget that works when you back to the previous page.',
+      child: const Padding(
+        padding: EdgeInsets.all(16),
+        child: Center(
+          child: Text(
+            'WillPopScope is a widget that works when you back to the previous page.',
+            textAlign: TextAlign.center,
+          ),
         ),
       ),
     );
