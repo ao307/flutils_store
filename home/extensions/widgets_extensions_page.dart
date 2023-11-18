@@ -15,18 +15,18 @@ extension SizedBoxExtension on num {
 ///
 extension PaddingList on List<Widget> {
   List<Widget> paddingDirectional({
-    double? top,
-    double? bottom,
-    double? start,
-    double? end,
+    double top = 0,
+    double bottom = 0,
+    double start = 0,
+    double end = 0,
   }) {
     return map(
       (e) => Padding(
         padding: EdgeInsetsDirectional.only(
-          top: top ?? 0,
-          bottom: bottom ?? 0,
-          start: start ?? 0,
-          end: end ?? 0,
+          top: top,
+          bottom: bottom,
+          start: start,
+          end: end,
         ),
         child: e,
       ),
@@ -34,24 +34,24 @@ extension PaddingList on List<Widget> {
   }
 
   List<Widget> paddingSymmetric({
-    double? vertical,
-    double? horizontal,
+    double vertical = 0,
+    double horizontal = 0,
   }) {
     return map(
       (e) => Padding(
         padding: EdgeInsets.symmetric(
-          vertical: vertical ?? 0,
-          horizontal: horizontal ?? 0,
+          vertical: vertical,
+          horizontal: horizontal,
         ),
         child: e,
       ),
     ).toList();
   }
 
-  List<Widget> paddingAll(double? padding) {
+  List<Widget> paddingAll(double padding) {
     return map(
       (e) => Padding(
-        padding: EdgeInsets.all(padding ?? 0),
+        padding: EdgeInsets.all(padding),
         child: e,
       ),
     ).toList();
