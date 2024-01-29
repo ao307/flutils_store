@@ -132,7 +132,7 @@ class _AZScrollListState extends State<AZScrollList> {
       body: Row(
         children: [
           SizedBox(
-            width: 24.0 * MediaQuery.of(context).textScaleFactor,
+            width: 24.0,
             child: ListView.builder(
               controller: _scrollController,
               itemCount: letters.length,
@@ -150,7 +150,7 @@ class _AZScrollListState extends State<AZScrollList> {
                       bottom: 4.0,
                     ),
                     alignment: Alignment.center,
-                    height: 24.0 * MediaQuery.of(context).textScaleFactor,
+                    height: 24.0,
                     decoration: BoxDecoration(
                       color: selectedLetter == letters[index]
                           ? Colors.purple
@@ -194,7 +194,7 @@ class _AZScrollListState extends State<AZScrollList> {
 
   void _scrollToIndex(int index) {
     _scrollController.animateTo(
-      index * 24.0 * MediaQuery.of(context).textScaleFactor,
+      index * 24.0,
       duration: const Duration(milliseconds: 200),
       curve: Curves.easeInOut,
     );
